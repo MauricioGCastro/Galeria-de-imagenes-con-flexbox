@@ -1,0 +1,101 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: 'Lato', sans-serif;
+}
+header{
+    text-align: center;
+    padding: 25px;
+    background-color: black;
+    color: whitesmoke;
+}
+footer{
+    background-color: black;
+    color: whitesmoke;
+    text-align: center;
+    padding: 20px;
+}
+/*CONTENIDO DE LA PAGINA*/
+section{
+    margin: 25px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.columna{
+    width: 24%;
+}
+
+.columna img{
+    width: 100%;
+    margin-bottom: 5px;
+    border-radius: 15px;
+}
+
+.columna img:hover{
+    position: relative;
+    bottom: 5px;
+    right: 5px;
+    box-shadow: 5px 5px 7px 0px darkgray;
+    transition: .5s;
+}
+
+/* EFECTOS EN FOTOS */
+.efectos img:hover{
+    /*filter: blur(5px);*/
+    filter: grayscale(80%);
+    transition: all .3s ease-in-out;
+}
+
+.desenfoque img:hover{
+    filter: blur(5px);
+}
+.sepia img:hover{
+    filter: sepia(90%);
+}
+.opacidad img:hover{
+    filter: opacity(70%);
+}
+
+/*RESPONSIVE (plantilla de una media query)
+@media TipoDeMedio and  (condicion){
+    aqui escribimos el codigo css
+}
+*/
+/*tipo de medio: all, screen, print, speech*/
+@media screen and (min-width: 992px){
+    body{
+        background-color: burlywood;
+    }
+    header{
+        background-color: lightgray;
+        color: lightslategray;
+    }
+}
+
+/* DISPOSITIVOS MEDIANOS*/
+@media all and (min-width: 768px) and (max-width:991px){
+    .columna{
+        width: 32%;
+    }
+}
+
+/* DISPOSITIVOS MAS CHICOS / SMALL DEVICES*/
+@media all  and (min-width:600px) and (max-width: 767px){
+    .columna{
+        width: 49%;
+    }
+}
+ 
+/* DISPOSITIVOS EXTRA SMALL (CELULARES)*/
+@media all and  (max-width: 599px){
+    .columna{
+        width: 100%;
+    }
+    header{
+        /*display: none;  esta propiedad borra el elemento del navegador*/
+        visibility: hidden; /* esta propiedad oculta un elemento pero deja el espacio en la pantala*/
+    }
+}
